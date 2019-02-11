@@ -6,11 +6,11 @@ import '../styles/ShapeStudy.scss';
 
 class SandBox extends Component {
 
-  state = { collapseID: "", collapse: "collapse" }
+  state = { collapseID: "", visibility: "invisible" }
   toggleCollapse = collapseID => () => {
     this.setState(prevState => ({
       collapseID: prevState.collapseID !== collapseID ? collapseID : "",
-      collapse: prevState.collapseID !== collapseID ? "" : "collapse"
+      visibility: prevState.collapseID !== collapseID ? "visible" : "invisible"
     }));
   }
 
@@ -61,11 +61,13 @@ class SandBox extends Component {
                 <Button onClick={this.toggleCollapse("show-code1")} className="btn btn-primary">
                   Show Code
                 </Button>
-                <Card.Body className={`p-0 ${this.state.collapse}`} id="show-code1">
-                  <Card.Text>
-                    <SyntaxHighlighter language='scss' style={atomDark}>{codeString}</SyntaxHighlighter>
-                  </Card.Text>
-                </Card.Body>
+              </Card.Body>
+            </Card>
+            <Card className={`show-code p-0 ${this.state.visibility}`}>
+              <Card.Body className="p-0" id="show-code1">
+                <Card.Text>
+                  <SyntaxHighlighter language='scss' style={atomDark}>{codeString}</SyntaxHighlighter>
+                </Card.Text>
               </Card.Body>
             </Card>
           </div>
