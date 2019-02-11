@@ -3,7 +3,7 @@
 3. ????  
 4. Profit!!!
 
-Open [andrew.henderson.io](andrew.henderson.io) to check it out.
+Open [andrew.henderson.io](http://andrew.henderson.io) to check it out.
 
 ## Technologies Leveraged 
 * [AWS](https://aws.amazon.com/) (S3, Route 53)
