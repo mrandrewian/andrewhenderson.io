@@ -5,8 +5,6 @@
 
 Open [andrew.henderson.io](andrew.henderson.io) to check it out.
 
-***
-
 ## Technologies Leveraged 
 * [AWS](https://aws.amazon.com/) (S3, Route 53)
 * [React](https://reactjs.org/)
