@@ -58,10 +58,10 @@ class SandBox extends Component {
                 <Card.Text>
                   Using css animations and overlapping psuedo element styling you can easily achieve this "usefull" little star.
                 </Card.Text>
-                <Button onClick={this.toggleCollapse("show-code")} className="btn btn-primary">
+                <Button onClick={this.toggleCollapse("show-code1")} className="btn btn-primary">
                   Show Code
                 </Button>
-                <Card.Body className={this.state.collapse} id="show-code">
+                <Card.Body className={`p-0 ${this.state.collapse}`} id="show-code1">
                   <Card.Text>
                     <SyntaxHighlighter language='scss' style={atomDark}>{codeString}</SyntaxHighlighter>
                   </Card.Text>
