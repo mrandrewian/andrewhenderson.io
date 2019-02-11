@@ -5,7 +5,10 @@
 
 Open [andrew.henderson.io](andrew.henderson.io) to check it out.
 
+***
+
 ## Technologies Leveraged 
-| JS Library            | React           |
-| CSS/Component Library | React Bootstrap |
-| Services Platform     | AWS             |
+* [AWS](https://aws.amazon.com/) (S3, Route 53)
+* [React](https://reactjs.org/)
+* [Create React App](https://facebook.github.io/create-react-app/)
+* [React Bootstrap](https://react-bootstrap.github.io/)
