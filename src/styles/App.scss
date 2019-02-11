@@ -1,0 +1,14 @@
+body {
+  background: var(--gray-dark);
+  color: var(--light);
+}
+
+.hero img {
+  box-shadow: 0 0 100px #000;
+  max-height: 600px;
+}
+
+.sand-box {
+  background: var(--light);
+  min-height: 500px;
+}
