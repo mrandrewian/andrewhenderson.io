@@ -3,6 +3,8 @@ import { Row, Col, Card, Button, Collapse } from 'react-bootstrap';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/styles/prism';
 import Polygons from './Polygons'
+import Heptagram from './Heptagram'
+import PenroseTriangle from './PenroseTriangle'
 import '../styles/ShapeStudy.scss';
 
 class SandBox extends Component {
@@ -49,8 +51,8 @@ class SandBox extends Component {
     `;
     return (
       <Row>
-        <Col sm={12} className="my-5" >
-          <h1>Sandbox</h1>
+        <Col sm={12} className="my-3" >
+          <h1>CSS Sandbox</h1>
           <div className="sand-box rounded">
             <Card className="text-dark">
               <div className="star-12 mx-auto mt-5 mb-4" />
@@ -80,24 +82,24 @@ class SandBox extends Component {
             </Collapse>
           </div>
         </Col>
-        <Col sm={12} className="" >
+        <Col sm={12} className="my-3" >
           <div className="sand-box rounded">
             <Card className="text-dark">
               <div className="polygons mx-auto w-100">
                 <Row className="no-gutters">
-                  <Col>
+                  <Col sm={4}>
                     <Polygons
                       varient="a"
                       count="2"
                     />
                   </Col>
-                  <Col>
+                  <Col sm={4}>
                     <Polygons
                       varient="b"
                       count="3"
                     />
                   </Col>
-                  <Col>
+                  <Col sm={4}>
                     <Polygons
                       varient="c"
                       count="4"
@@ -106,36 +108,71 @@ class SandBox extends Component {
                 </Row>
               </div>
               <Card.Body>
-                <Card.Title>Polygons Galore</Card.Title>
+                <Card.Title>Overlapping Animated Polygons</Card.Title>
                 <Card.Text>
                   This is what happens when you start messing with stuff just for the heck of it.
                 </Card.Text>
-                <Button className="btn btn-primary">
+                <Button
+                  onClick={() => this.setState({ open: !open })}
+                  aria-controls="show-code2"
+                  aria-expanded={open}
+                  className="btn btn-primary"
+                >
                   Show Code
                 </Button>
               </Card.Body>
             </Card>
-
-            {/* <Card className="text-dark" style={{ width: '18rem' }}>
-              <div className="star-12 mx-auto mt-5 mb-4" />
+            <Collapse in={this.state.open}>
+              <Card className="show-code p-0">
+                <Card.Body className="p-0" id="show-code3">
+                  <Card.Text>
+                    <SyntaxHighlighter language='scss' style={atomDark}>{codeString}</SyntaxHighlighter>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Collapse>
+          </div>
+        </Col>
+        <Col sm={12} className="my-3">
+          <div className="sand-box rounded">
+            <Card className="text-dark">
+              <div className="heptagram">
+                <Row className="no-gutters">
+                  <Col sm={4}>
+                    <Heptagram />
+                  </Col>
+                  <Col sm={4}>
+                    <PenroseTriangle />
+                  </Col>
+                  <Col sm={4}>
+                    <Heptagram />
+                  </Col>
+                </Row>
+              </div>
               <Card.Body>
-                <Card.Title>Heptagram</Card.Title>
+                <Card.Title>Troublesome Shapes</Card.Title>
                 <Card.Text>
-                  The 7 pointed star that will make your brain feel fuzzy.
+                  This shapes will make your brain feel fuzzy.
                 </Card.Text>
-                <Button onClick={this.toggleCollapse("show-code2")} className="btn btn-primary">
+                <Button
+                  onClick={() => this.setState({ open: !open })}
+                  aria-controls="show-code3"
+                  aria-expanded={open}
+                  className="btn btn-primary"
+                >
                   Show Code
                 </Button>
               </Card.Body>
-            </Card> */}
-            {/* <Card className={`show-code p-0 ${this.state.visibility}`}>
-              <Card.Body className="p-0" id="show-code2">
-                <Card.Text>
-                  <SyntaxHighlighter language='scss' style={atomDark}>{codeString}</SyntaxHighlighter>
-                </Card.Text>
-              </Card.Body>
-            </Card> */}
-
+            </Card>
+            <Collapse in={this.state.open}>
+              <Card className="show-code p-0">
+                <Card.Body className="p-0" id="show-code3">
+                  <Card.Text>
+                    <SyntaxHighlighter language='scss' style={atomDark}>{codeString}</SyntaxHighlighter>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Collapse>
           </div>
         </Col>
       </Row>

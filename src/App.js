@@ -5,10 +5,9 @@ import button2 from './images/vt_fall.jpg';
 import button3 from './images/button1.jpg';
 import button2Overlay from './images/vt_outline.png';
 import './styles/App.scss';
-import { Container, Row, Figure, Carousel } from 'react-bootstrap';
+import { Container, Row, Figure } from 'react-bootstrap';
 import ZoomButtonGroup from './components/ZoomButtonGroup';
 import SandBox from './components/SandBox';
-import PhotoRollGroup from './components/SandBox';
 
 class App extends Component {
   render() {
@@ -57,7 +56,6 @@ class App extends Component {
               ]
             }
           />
-          {/* <PhotoRollGroup/> */}
           <SandBox/>
         </Container>
       </div>
