@@ -66,29 +66,4 @@
     stroke: var(--cyan);
     animation-duration: 24s;
   }
-
-  @-moz-keyframes spin {
-    from {
-      -moz-transform: rotate(0deg) scaleY(1.5);
-    }
-    to {
-      -moz-transform: rotate(359deg) scaleY(1.5);
-    }
-  }
-  @-webkit-keyframes spin {
-    from {
-      -webkit-transform: rotate(0deg) scaleY(1.5);
-    }
-    to {
-      -webkit-transform: rotate(359deg scaleY(1.5));
-    }
-  }
-  @keyframes spin {
-    from {
-      transform: rotate(0deg) scaleY(1.5);
-    }
-    to {
-      transform: rotate(359deg) scaleY(1.5);
-    }
-  }
 }

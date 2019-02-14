@@ -18,3 +18,20 @@ svg {
   margin-top: 160px;
   margin-left: 50%;
 }
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(340deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(340deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(340deg);
+    transform: rotate(340deg);
+  }
+}

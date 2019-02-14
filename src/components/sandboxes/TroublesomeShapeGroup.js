@@ -24,7 +24,6 @@ class Polygons extends Component {
         fill: none;
         stroke: blue;
         stroke-width: 2;
-        stroke-width: 3;
         animation-duration: 5s;
         animation-iteration-count: infinite;
         animation-direction: alternate;
@@ -60,7 +59,7 @@ class Polygons extends Component {
         stroke: var(--yellow);
         animation-duration: 22s;
       }
-    }
+    }    
 
     .penrose-triangle {
       polygon.left {
