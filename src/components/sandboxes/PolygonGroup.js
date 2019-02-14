@@ -3,7 +3,7 @@ import { Row, Col, Card, Button, Collapse } from "react-bootstrap";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/styles/prism";
 import Polygon from "./Polygon";
-import "../../styles/Polygons.scss";
+import "../../styles/Polygon.scss";
 
 class Polygons extends Component {
   constructor(props) {
@@ -208,7 +208,6 @@ class Polygons extends Component {
     const { open } = this.state;
     const codeString = `
     .polygon {
-
       polygon {
         stroke-width: 3;
         animation-duration: 5s;
@@ -216,81 +215,92 @@ class Polygons extends Component {
         animation-direction: alternate;
         animation-name: spin;
       }
-      
+    
       polygon.a0 {
         stroke: var(--red);
         animation-duration: 21s;
       }
-      
+    
       polygon.a1 {
         stroke: var(--yellow);
-        animation-duration:22s;
+        animation-duration: 22s;
       }
-      
+    
       polygon.a2 {
         stroke: var(--cyan);
         animation-duration: 23s;
       }
-      
+    
       polygon.a3 {
         stroke: var(--blue);
         animation-duration: 24s;
       }
-      
+    
       polygon.b0 {
         stroke: var(--pink);
         animation-duration: 21s;
       }
-      
+    
       polygon.b1 {
         stroke: var(--yellow);
         animation-duration: 22s;
       }
-      
+    
       polygon.b2 {
         stroke: var(--cyan);
         animation-duration: 23s;
       }
-      
+    
       polygon.b3 {
         stroke: var(--indigo);
         animation-duration: 24s;
       }
-      
+    
       polygon.c0 {
         stroke: var(--orange);
         animation-duration: 21s;
       }
-      
+    
       polygon.c1 {
         stroke: var(--teal);
         animation-duration: 22s;
       }
-      
+    
       polygon.c2 {
         stroke: var(--red);
         animation-duration: 23s;
       }
-      
+    
       polygon.c3 {
         stroke: var(--cyan);
         animation-duration: 24s;
       }
-      
+    
       @-moz-keyframes spin {
-          from { -moz-transform: rotate(0deg) scaleY(1.5); }
-          to { -moz-transform: rotate(359deg) scaleY(1.5); }
+        from {
+          -moz-transform: rotate(0deg) scaleY(1.5);
+        }
+        to {
+          -moz-transform: rotate(359deg) scaleY(1.5);
+        }
       }
       @-webkit-keyframes spin {
-          from { -webkit-transform: rotate(0deg) scaleY(1.5); }
-          to { -webkit-transform: rotate(359deg scaleY(1.5)); }
+        from {
+          -webkit-transform: rotate(0deg) scaleY(1.5);
+        }
+        to {
+          -webkit-transform: rotate(359deg scaleY(1.5));
+        }
       }
       @keyframes spin {
-          from {transform:rotate(0deg) scaleY(1.5);}
-          to {transform:rotate(359deg) scaleY(1.5);}
+        from {
+          transform: rotate(0deg) scaleY(1.5);
+        }
+        to {
+          transform: rotate(359deg) scaleY(1.5);
+        }
       }
-      
-    }    
+    }       
     `;
     return (
       <Col sm={12} className="my-3">

@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-import { Row } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import StarGroup from "./sandboxes/StarGroup";
 import PolygonGroup from "./sandboxes/PolygonGroup";
 import TroublesomeShapeGroup from "./sandboxes/TroublesomeShapeGroup";
-import "../styles/ShapeStudy.scss";
 
 class SandBoxGroup extends Component {
   render() {
     return (
       <Row>
-        <h1>CSS Sandbox</h1>
+        <Col className="mt-5">
+          <h1>CSS Sandbox</h1>
+        </Col>
         <StarGroup />
         <PolygonGroup />
         <TroublesomeShapeGroup />

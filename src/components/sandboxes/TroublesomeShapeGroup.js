@@ -19,83 +19,80 @@ class Polygons extends Component {
   render() {
     const { open } = this.state;
     const codeString = `
-      .animated-heptogram {
+    .animated-heptogram {
+      polyline {
+        fill: none;
+        stroke: blue;
+        stroke-width: 2;
+        stroke-width: 3;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-name: spin;
+      }
     
-        polyline {
-          fill: none;
-          stroke: blue;
-          stroke-width: 2;
-          stroke-width: 3;
-          animation-duration: 5s;
-          animation-iteration-count: infinite;
-          animation-direction: alternate;
-          animation-name: spin;
-        }
-      
-        polyline.l1 {
-          stroke: var(--red);
-          animation-duration: 21s;
-        }
-        
-        polyline.l2 {
-          stroke: var(--yellow);
-          animation-duration:22s;
-        }
-        
-        polyline.l3 {
-          stroke: var(--cyan);
-          animation-duration: 23s;
-        }
-        
-        polyline.l4 {
-          stroke: var(--blue);
-          animation-duration: 24s;
-        }
-      
-        polyline.l5 {
-          stroke: var(--red);
-          animation-duration: 21s;
-        }
-        
-        polyline.l6 {
-          stroke: var(--yellow);
-          animation-duration:22s;
-        }
-      
+      polyline.l1 {
+        stroke: var(--red);
+        animation-duration: 21s;
       }
+    
+      polyline.l2 {
+        stroke: var(--yellow);
+        animation-duration: 22s;
+      }
+    
+      polyline.l3 {
+        stroke: var(--cyan);
+        animation-duration: 23s;
+      }
+    
+      polyline.l4 {
+        stroke: var(--blue);
+        animation-duration: 24s;
+      }
+    
+      polyline.l5 {
+        stroke: var(--red);
+        animation-duration: 21s;
+      }
+    
+      polyline.l6 {
+        stroke: var(--yellow);
+        animation-duration: 22s;
+      }
+    }
 
-      .penrose-triangle {
-        polygon.left {
-          fill: yellow;
-          stroke: red;
-        }
-        
-        polygon.left-inside {
-          fill: yellow;
-          stroke: red;
-        }
-        
-        polygon.bottom-top {
-          fill: blue;
-          stroke: red;
-        }
-        
-        polygon.bottom-bottom {
-          fill: blue;
-          stroke: red;
-        }
-        
-        polygon.right-inside {
-          fill: green;
-          stroke: red;
-        }
-        
-        polygon.right {
-          fill: green;
-          stroke: red;
-        }
-        
+    .penrose-triangle {
+      polygon.left {
+        fill: yellow;
+        stroke: red;
       }
+    
+      polygon.left-inside {
+        fill: yellow;
+        stroke: red;
+      }
+    
+      polygon.bottom-top {
+        fill: blue;
+        stroke: red;
+      }
+    
+      polygon.bottom-bottom {
+        fill: blue;
+        stroke: red;
+      }
+    
+      polygon.right-inside {
+        fill: green;
+        stroke: red;
+      }
+    
+      polygon.right {
+        fill: green;
+        stroke: red;
+      }
+    }    
     `;
     return (
       <Col sm={12} className="my-3">

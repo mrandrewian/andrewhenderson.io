@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Col, Card, Button, Collapse } from "react-bootstrap";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/styles/prism";
+import "../../styles/Star.scss";
 
 class Stars extends Component {
   constructor(props) {
@@ -15,35 +16,48 @@ class Stars extends Component {
   render() {
     const { open } = this.state;
     const codeString = `
-      .star-12 {
-        position: relative;
+    .star-12 {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      background: rgba(102, 16, 242, 0.3);
+      transform: rotate(-20deg);
+      animation: spin 5s linear infinite;
+    
+      &:before {
+        content: "";
+        position: absolute;
         width: 60px;
         height: 60px;
-        background: rgba(102,16,242,.25);
-        transform: rotate(-20deg);
-        animation: spin 5s linear infinite;
-        
-        &:before {
-          content: '';
-          position: absolute;
-          width: 60px;
-          height: 60px;
-          background: rgba(102,16,242,.5);
-          transform: rotate(-30deg);
-        }
-        &:after {
-          content: '';
-          position: absolute;
-          width: 60px;
-          height: 60px;
-          background: rgba(102,16,242,.5);
-          transform: rotate(-60deg);
-        }
+        background: rgba(102, 16, 242, 0.5);
+        transform: rotate(-30deg);
       }
-
-      @-moz-keyframes spin { 100% { -moz-transform: rotate(340deg); } }
-      @-webkit-keyframes spin { 100% { -webkit-transform: rotate(340deg); } }
-      @keyframes spin { 100% { -webkit-transform: rotate(340deg); transform:rotate(340deg); } }
+      &:after {
+        content: "";
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        background: rgba(102, 16, 242, 0.7);
+        transform: rotate(-60deg);
+      }
+    }
+    
+    @-moz-keyframes spin {
+      100% {
+        -moz-transform: rotate(340deg);
+      }
+    }
+    @-webkit-keyframes spin {
+      100% {
+        -webkit-transform: rotate(340deg);
+      }
+    }
+    @keyframes spin {
+      100% {
+        -webkit-transform: rotate(340deg);
+        transform: rotate(340deg);
+      }
+    }    
     `;
     return (
       <Col sm={12} className="my-3">
