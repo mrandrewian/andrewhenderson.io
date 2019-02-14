@@ -2,28 +2,41 @@
   position: relative;
   width: 60px;
   height: 60px;
-  background: rgba(102,16,242,.30);
+  background: rgba(102, 16, 242, 0.3);
   transform: rotate(-20deg);
   animation: spin 5s linear infinite;
-  
+
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     width: 60px;
     height: 60px;
-    background: rgba(102,16,242,.5);
+    background: rgba(102, 16, 242, 0.5);
     transform: rotate(-30deg);
   }
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     width: 60px;
     height: 60px;
-    background: rgba(102,16,242,.7);
+    background: rgba(102, 16, 242, 0.7);
     transform: rotate(-60deg);
   }
 }
 
-@-moz-keyframes spin { 100% { -moz-transform: rotate(340deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(340deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(340deg); transform:rotate(340deg); } }
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(340deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(340deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(340deg);
+    transform: rotate(340deg);
+  }
+}

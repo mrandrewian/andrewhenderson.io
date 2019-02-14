@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Row } from 'react-bootstrap';
-import ZoomButton from './ZoomButton'
-import '../styles/ZoomButtons.scss';
+import React, { Component } from "react";
+import { Row } from "react-bootstrap";
+import ZoomButton from "./ZoomButton";
+import "../styles/ZoomButtons.scss";
 
 class ZoomButtons extends Component {
   render() {
@@ -20,8 +20,7 @@ class ZoomButtons extends Component {
               button={button.button}
               buttonLink={button.buttonLink}
               buttonTarget={button.buttonTarget}
-            >
-            </ZoomButton>
+            />
           ))}
         </Row>
       </div>

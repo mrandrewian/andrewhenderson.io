@@ -1,29 +1,31 @@
-polygon.left {
-  fill: yellow;
-  stroke: red;
-}
+.penrose-triangle {
+  polygon.left {
+    fill: yellow;
+    stroke: red;
+  }
 
-polygon.left-inside {
-  fill: yellow;
-  stroke: red;
-}
+  polygon.left-inside {
+    fill: yellow;
+    stroke: red;
+  }
 
-polygon.bottom-top {
-  fill: blue;
-  stroke: red;
-}
+  polygon.bottom-top {
+    fill: blue;
+    stroke: red;
+  }
 
-polygon.bottom-bottom {
-  fill: blue;
-  stroke: red;
-}
+  polygon.bottom-bottom {
+    fill: blue;
+    stroke: red;
+  }
 
-polygon.right-inside {
-  fill: green;
-  stroke: red;
-}
+  polygon.right-inside {
+    fill: green;
+    stroke: red;
+  }
 
-polygon.right {
-  fill: green;
-  stroke: red;
+  polygon.right {
+    fill: green;
+    stroke: red;
+  }
 }

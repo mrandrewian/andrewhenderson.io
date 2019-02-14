@@ -1,5 +1,4 @@
 .animated-heptogram {
-  
   polyline {
     fill: none;
     stroke: blue;
@@ -15,17 +14,17 @@
     stroke: var(--red);
     animation-duration: 21s;
   }
-  
+
   polyline.l2 {
     stroke: var(--yellow);
-    animation-duration:22s;
+    animation-duration: 22s;
   }
-  
+
   polyline.l3 {
     stroke: var(--cyan);
     animation-duration: 23s;
   }
-  
+
   polyline.l4 {
     stroke: var(--blue);
     animation-duration: 24s;
@@ -35,10 +34,9 @@
     stroke: var(--red);
     animation-duration: 21s;
   }
-  
+
   polyline.l6 {
     stroke: var(--yellow);
-    animation-duration:22s;
+    animation-duration: 22s;
   }
-
 }
