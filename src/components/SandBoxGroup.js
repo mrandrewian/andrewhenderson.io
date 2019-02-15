@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
 import StarGroup from "./sandboxes/StarGroup";
-import PolygonGroup from "./sandboxes/PolygonGroup";
+import PolylineGroup from "./sandboxes/PolylineGroup";
 import TroublesomeShapeGroup from "./sandboxes/TroublesomeShapeGroup";
 
 class SandBoxGroup extends Component {
@@ -12,7 +12,7 @@ class SandBoxGroup extends Component {
           <h1>CSS Sandbox</h1>
         </Col>
         <StarGroup />
-        <PolygonGroup />
+        <PolylineGroup />
         <TroublesomeShapeGroup />
       </Row>
     );

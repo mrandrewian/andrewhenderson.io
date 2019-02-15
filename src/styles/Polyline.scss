@@ -1,68 +1,96 @@
-.polygon {
-  polygon {
+.polyline {
+  .polyline-layer-container {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .polyline-layer {
     stroke-width: 3;
-    animation-duration: 5s;
+    fill: none;
+
+    animation-name: spin;
+    animation-duration: 20s;
+    animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    animation-name: spin;
+    animation-fill-mode: none;
+    animation-play-state: running;
+
+    &.layer0 {
+      transform: rotate(0deg);
+    }
+    &.layer2 {
+      transform: rotate(22deg);
+    }
+    &.layer1 {
+      transform: rotate(45deg);
+    }
+    &.layer3 {
+      transform: rotate(67deg);
+    }
   }
 
-  polygon.a0 {
+  .btn-toolbar {
+    margin-top: 300px;
+  }
+
+  polyline.a0 {
     stroke: var(--red);
     animation-duration: 21s;
   }
 
-  polygon.a1 {
+  polyline.a1 {
     stroke: var(--yellow);
     animation-duration: 22s;
   }
 
-  polygon.a2 {
+  polyline.a2 {
     stroke: var(--cyan);
     animation-duration: 23s;
   }
 
-  polygon.a3 {
+  polyline.a3 {
     stroke: var(--blue);
     animation-duration: 24s;
   }
 
-  polygon.b0 {
+  polyline.b0 {
     stroke: var(--pink);
     animation-duration: 21s;
   }
 
-  polygon.b1 {
+  polyline.b1 {
     stroke: var(--yellow);
     animation-duration: 22s;
   }
 
-  polygon.b2 {
+  polyline.b2 {
     stroke: var(--cyan);
     animation-duration: 23s;
   }
 
-  polygon.b3 {
+  polyline.b3 {
     stroke: var(--indigo);
     animation-duration: 24s;
   }
 
-  polygon.c0 {
+  polyline.c0 {
     stroke: var(--orange);
     animation-duration: 21s;
   }
 
-  polygon.c1 {
+  polyline.c1 {
     stroke: var(--teal);
     animation-duration: 22s;
   }
 
-  polygon.c2 {
+  polyline.c2 {
     stroke: var(--red);
     animation-duration: 23s;
   }
 
-  polygon.c3 {
+  polyline.c3 {
     stroke: var(--cyan);
     animation-duration: 24s;
   }
