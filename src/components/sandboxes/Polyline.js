@@ -23,7 +23,7 @@ class Polylines extends Component {
     let polylines = [];
     for (let i = 0; i < layers; i++) {
       polylines.push(
-        <div className="polyline-layer-container">
+        <div className={`polyline-layer-container plc${i}`}>
           <svg className={`layer${i} polyline-layer`} height="200" width="200">
             {/* Top Left */}
             <polyline

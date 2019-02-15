@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Heptagram extends Component {
   render() {
     return (
-      <svg className="animated-heptogram" height="100" width="100">
+      <svg className="animated heptogram" height="100" width="100">
         <polyline
           className="l1"
           points="0,-100 97,22 -43,90 -78,-62 78,-62 43,90 -97,22 0,-100"

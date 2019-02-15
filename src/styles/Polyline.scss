@@ -16,18 +16,78 @@
     animation-direction: alternate;
     animation-fill-mode: none;
     animation-play-state: running;
+  }
 
-    &.layer0 {
+  .plc0 {
+    .layer0 {
       transform: rotate(0deg);
+      animation-duration: (random(11) + 19) + s;
     }
-    &.layer2 {
+    .layer2 {
       transform: rotate(22deg);
+      animation-duration: (random(11) + 19) + s;
     }
-    &.layer1 {
+    .layer1 {
       transform: rotate(45deg);
+      animation-duration: (random(11) + 19) + s;
     }
-    &.layer3 {
+    .layer3 {
       transform: rotate(67deg);
+      animation-duration: (random(11) + 19) + s;
+    }
+  }
+  .plc1 {
+    .layer0 {
+      transform: rotate(0deg);
+      animation-duration: (random(11) + 19) + s;
+    }
+    .layer2 {
+      transform: rotate(22deg);
+      animation-duration: (random(11) + 19) + s;
+    }
+    .layer1 {
+      transform: rotate(45deg);
+      animation-duration: (random(11) + 19) + s;
+    }
+    .layer3 {
+      transform: rotate(67deg);
+      animation-duration: (random(11) + 19) + s;
+    }
+  }
+  .plc2 {
+    .layer0 {
+      transform: rotate(0deg);
+      animation-duration: (random(11) + 19) + s;
+    }
+    .layer2 {
+      transform: rotate(22deg);
+      animation-duration: (random(11) + 19) + s;
+    }
+    .layer1 {
+      transform: rotate(45deg);
+      animation-duration: (random(11) + 19) + s;
+    }
+    .layer3 {
+      transform: rotate(67deg);
+      animation-duration: (random(11) + 19) + s;
+    }
+  }
+  .plc3 {
+    .layer0 {
+      transform: rotate(0deg);
+      animation-duration: (random(11) + 19) + s;
+    }
+    .layer2 {
+      transform: rotate(22deg);
+      animation-duration: (random(11) + 19) + s;
+    }
+    .layer1 {
+      transform: rotate(45deg);
+      animation-duration: (random(11) + 19) + s;
+    }
+    .layer3 {
+      transform: rotate(67deg);
+      animation-duration: (random(11) + 19) + s;
     }
   }
 
@@ -37,61 +97,49 @@
 
   polyline.a0 {
     stroke: var(--red);
-    animation-duration: 21s;
   }
 
   polyline.a1 {
     stroke: var(--yellow);
-    animation-duration: 22s;
   }
 
   polyline.a2 {
     stroke: var(--cyan);
-    animation-duration: 23s;
   }
 
   polyline.a3 {
     stroke: var(--blue);
-    animation-duration: 24s;
   }
 
   polyline.b0 {
     stroke: var(--pink);
-    animation-duration: 21s;
   }
 
   polyline.b1 {
     stroke: var(--yellow);
-    animation-duration: 22s;
   }
 
   polyline.b2 {
     stroke: var(--cyan);
-    animation-duration: 23s;
   }
 
   polyline.b3 {
     stroke: var(--indigo);
-    animation-duration: 24s;
   }
 
   polyline.c0 {
     stroke: var(--orange);
-    animation-duration: 21s;
   }
 
   polyline.c1 {
     stroke: var(--teal);
-    animation-duration: 22s;
   }
 
   polyline.c2 {
     stroke: var(--red);
-    animation-duration: 23s;
   }
 
   polyline.c3 {
     stroke: var(--cyan);
-    animation-duration: 24s;
   }
 }

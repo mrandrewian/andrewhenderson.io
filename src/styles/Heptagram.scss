@@ -1,45 +1,71 @@
-.animated-heptogram {
+.heptogram {
   overflow: visible;
   margin-top: 160px;
   margin-left: 50%;
 
   polyline {
     fill: none;
-    stroke: blue;
     stroke-width: 2;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-name: spin;
-  }
 
-  polyline.l1 {
+    &.l1 {
+      stroke: var(--red);
+    }
+
+    &.l2 {
+      stroke: var(--yellow);
+    }
+
+    &.l3 {
+      stroke: var(--cyan);
+    }
+
+    &.l4 {
+      stroke: var(--blue);
+    }
+
+    &.l5 {
+      stroke: var(--red);
+    }
+
+    &.l6 {
+      stroke: var(--yellow);
+    }
+  }
+}
+
+.animated.heptogram polyline {
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-name: spin;
+
+  &.l1 {
     stroke: var(--red);
-    animation-duration: 21s;
+    animation-duration: random(25) + s;
   }
 
-  polyline.l2 {
+  &.l2 {
     stroke: var(--yellow);
-    animation-duration: 22s;
+    animation-duration: random(25) + s;
   }
 
-  polyline.l3 {
+  &.l3 {
     stroke: var(--cyan);
-    animation-duration: 23s;
+    animation-duration: random(25) + s;
   }
 
-  polyline.l4 {
+  &.l4 {
     stroke: var(--blue);
-    animation-duration: 24s;
+    animation-duration: random(25) + s;
   }
 
-  polyline.l5 {
+  &.l5 {
     stroke: var(--red);
-    animation-duration: 21s;
+    animation-duration: random(25) + s;
   }
 
-  polyline.l6 {
+  &.l6 {
     stroke: var(--yellow);
-    animation-duration: 22s;
+    animation-duration: random(25) + s;
   }
 }
