@@ -134,7 +134,7 @@ class Polylines extends Component {
           <Card className="text-dark">
             <div className="polyline-group mx-auto w-100">
               <Row className="no-gutters">
-                <Col sm={4}>
+                <Col lg={4}>
                   <Polyline
                     varient="a"
                     count="2"
@@ -142,7 +142,7 @@ class Polylines extends Component {
                     overlay={false}
                   />
                 </Col>
-                <Col sm={4}>
+                <Col lg={4}>
                   <Polyline
                     varient="b"
                     count="3"
@@ -150,7 +150,7 @@ class Polylines extends Component {
                     overlay={true}
                   />
                 </Col>
-                <Col sm={4}>
+                <Col lg={4}>
                   <Polyline
                     varient="c"
                     count="4"

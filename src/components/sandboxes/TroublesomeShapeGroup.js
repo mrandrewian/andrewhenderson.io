@@ -99,13 +99,13 @@ class Polygons extends Component {
           <Card className="text-dark">
             <div className="troublesome-shapes">
               <Row className="no-gutters">
-                <Col sm={4}>
+                <Col lg={4}>
                   <Heptagram />
                 </Col>
-                <Col sm={4}>
+                <Col lg={4}>
                   <PenroseTriangle />
                 </Col>
-                <Col sm={4}>
+                <Col lg={4}>
                   <Heptagram />
                 </Col>
               </Row>
