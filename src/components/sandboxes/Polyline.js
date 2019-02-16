@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import { ButtonToolbar, Dropdown, DropdownButton } from "react-bootstrap";
+import {
+  ButtonToolbar,
+  Dropdown,
+  DropdownButton,
+  Button
+} from "react-bootstrap";
 
 class Polylines extends Component {
   constructor(props) {
@@ -7,7 +12,9 @@ class Polylines extends Component {
 
     this.state = {
       layers: this.props.count,
-      varient: this.props.varient
+      varient: this.props.varient,
+      strokeWidth: this.props.strokeWidth,
+      overlay: this.props.overlay
     };
   }
 
@@ -19,12 +26,27 @@ class Polylines extends Component {
     this.setState({ varient: eventKey });
   };
 
+  setStrokeWidth = eventKey => {
+    this.setState({ strokeWidth: eventKey });
+  };
+
+  setOverlay = () => {
+    let overlay = this.state.overlay ? false : true;
+    this.setState({ overlay });
+  };
+
   loopPolylines = layers => {
     let polylines = [];
     for (let i = 0; i < layers; i++) {
       polylines.push(
         <div className={`polyline-layer-container plc${i}`}>
-          <svg className={`layer${i} polyline-layer`} height="200" width="200">
+          <svg
+            className={`polyline-layer layer${i} stroke-width${
+              this.state.strokeWidth
+            }`}
+            height="200"
+            width="200"
+          >
             {/* Top Left */}
             <polyline
               className={`tl ${this.state.varient}${i}`}
@@ -199,9 +221,14 @@ class Polylines extends Component {
   render() {
     return (
       <div className="polyline">
+        {this.state.overlay ? <div className="circle-overlay" /> : ""}
         {this.loopPolylines(this.state.layers)}
         <ButtonToolbar className="justify-content-center">
-          <DropdownButton className="p-2" id="layers-button" title="Layers">
+          <DropdownButton
+            className="px-2 m-1"
+            id="layers-button"
+            title="Layers"
+          >
             <Dropdown.Item onSelect={this.setLayers} eventKey="1">
               1
             </Dropdown.Item>
@@ -215,7 +242,11 @@ class Polylines extends Component {
               4
             </Dropdown.Item>
           </DropdownButton>
-          <DropdownButton className="p-2" id="varient-button" title="Varient">
+          <DropdownButton
+            className="px-2 m-1"
+            id="varient-button"
+            title="Color Varient"
+          >
             <Dropdown.Item onSelect={this.setVarient} eventKey="a">
               A
             </Dropdown.Item>
@@ -226,6 +257,27 @@ class Polylines extends Component {
               C
             </Dropdown.Item>
           </DropdownButton>
+          <DropdownButton
+            className="px-2 m-1"
+            id="varient-button"
+            title="Stroke Width"
+          >
+            <Dropdown.Item onSelect={this.setStrokeWidth} eventKey="2">
+              2
+            </Dropdown.Item>
+            <Dropdown.Item onSelect={this.setStrokeWidth} eventKey="4">
+              4
+            </Dropdown.Item>
+            <Dropdown.Item onSelect={this.setStrokeWidth} eventKey="6">
+              6
+            </Dropdown.Item>
+            <Dropdown.Item onSelect={this.setStrokeWidth} eventKey="8">
+              8
+            </Dropdown.Item>
+          </DropdownButton>
+          <Button className="px-2 m-1" onClick={this.setOverlay}>
+            Toggle Overlay
+          </Button>
         </ButtonToolbar>
       </div>
     );

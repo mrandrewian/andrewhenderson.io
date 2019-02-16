@@ -135,13 +135,28 @@ class Polylines extends Component {
             <div className="polyline-group mx-auto w-100">
               <Row className="no-gutters">
                 <Col sm={4}>
-                  <Polyline varient="a" count="2" />
+                  <Polyline
+                    varient="a"
+                    count="2"
+                    strokeWidth="4"
+                    overlay={false}
+                  />
                 </Col>
                 <Col sm={4}>
-                  <Polyline varient="b" count="3" />
+                  <Polyline
+                    varient="b"
+                    count="3"
+                    strokeWidth="4"
+                    overlay={true}
+                  />
                 </Col>
                 <Col sm={4}>
-                  <Polyline varient="c" count="4" />
+                  <Polyline
+                    varient="c"
+                    count="4"
+                    strokeWidth="4"
+                    overlay={false}
+                  />
                 </Col>
               </Row>
             </div>
