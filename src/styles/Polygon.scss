@@ -1,0 +1,12 @@
+svg.polygon {
+  overflow: visible;
+  margin-top: 160px;
+  margin-left: 50%;
+  stroke-width: 5;
+  stroke: var(--orange);
+
+  path {
+    fill: none;
+    stroke-width: 5;
+  }
+}

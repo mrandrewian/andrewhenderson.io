@@ -3,9 +3,12 @@ import { Row, Col, Card, Button, Collapse } from "react-bootstrap";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/styles/prism";
 import Heptagram from "./Heptagram";
+import SpringHeptagram from "./SpringHeptagram";
 import PenroseTriangle from "./PenroseTriangle";
+import Polygon from "./Polygon";
 import "../../styles/Heptagram.scss";
 import "../../styles/PenroseTriangle.scss";
+import "../../styles/Polygon.scss";
 
 class Polygons extends Component {
   constructor(props) {
@@ -106,7 +109,10 @@ class Polygons extends Component {
                   <PenroseTriangle />
                 </Col>
                 <Col lg={4}>
-                  <Heptagram />
+                  <SpringHeptagram />
+                </Col>
+                <Col lg={4}>
+                  <Polygon />
                 </Col>
               </Row>
             </div>

@@ -3,33 +3,38 @@
   margin-top: 160px;
   margin-left: 50%;
 
-  polygon.left {
-    fill: yellow;
-    stroke: red;
+  polygon {
+    fill: indigo;
+    stroke: purple;
   }
 
-  polygon.left-inside {
-    fill: yellow;
-    stroke: red;
-  }
+  // polygon.left-inside {
+  //   fill: yellow;
+  //   stroke: red;
+  // }
 
-  polygon.bottom-top {
-    fill: blue;
-    stroke: red;
-  }
+  // polygon.bottom-top {
+  //   fill: blue;
+  //   stroke: red;
+  // }
 
-  polygon.bottom-bottom {
-    fill: blue;
-    stroke: red;
-  }
+  // polygon.bottom-bottom {
+  //   fill: blue;
+  //   stroke: red;
+  // }
 
-  polygon.right-inside {
-    fill: green;
-    stroke: red;
-  }
+  // polygon.right-inside {
+  //   fill: green;
+  //   stroke: red;
+  // }
 
-  polygon.right {
-    fill: green;
-    stroke: red;
-  }
+  // polygon.right {
+  //   fill: green;
+  //   stroke: red;
+  // }
+}
+
+.penrose-cubes {
+  transform: translateY(0) rotatex(-33.5deg) rotatey(45deg);
+  transform-style: preserve-3D;
 }
