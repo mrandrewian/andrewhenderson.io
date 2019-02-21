@@ -9,8 +9,8 @@ class Heptagram extends Component {
   }
 
   randomize = () => {
-    const min = 10;
-    const max = 20;
+    const min = 5;
+    const max = 15;
     this.setState({
       styles1: {
         animationDuration:
