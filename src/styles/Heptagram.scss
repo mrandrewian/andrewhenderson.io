@@ -1,4 +1,4 @@
-.heptogram {
+.heptagram svg {
   overflow: visible;
   margin-top: 160px;
   margin-left: 50%;
@@ -33,7 +33,7 @@
   }
 }
 
-.animated.heptogram polyline {
+.animated.heptagram polyline {
   animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-direction: alternate;

@@ -4,7 +4,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/styles/prism";
 import Heptagram from "./Heptagram";
 import SpringHeptagram from "./SpringHeptagram";
-import PenroseTriangle from "./PenroseTriangle";
+// import PenroseTriangle from "./PenroseTriangle";
 import Polygon from "./Polygon";
 import "../../styles/Heptagram.scss";
 import "../../styles/PenroseTriangle.scss";
@@ -106,9 +106,6 @@ class Polygons extends Component {
                   <Heptagram />
                 </Col>
                 <Col lg={4}>
-                  <PenroseTriangle />
-                </Col>
-                <Col lg={4}>
                   <SpringHeptagram />
                 </Col>
                 <Col lg={4}>
@@ -117,18 +114,18 @@ class Polygons extends Component {
               </Row>
             </div>
             <Card.Body>
-              <Card.Title>Troublesome Shapes</Card.Title>
+              <Card.Title>Troublesome Polygons</Card.Title>
               <Card.Text>
                 This shapes will make your brain feel fuzzy.
               </Card.Text>
-              <Button
+              {/* <Button
                 onClick={() => this.setState({ open: !open })}
                 aria-controls="show-code3"
                 aria-expanded={open}
                 className="btn btn-primary"
               >
                 Show Code
-              </Button>
+              </Button> */}
             </Card.Body>
           </Card>
           <Collapse in={this.state.open}>

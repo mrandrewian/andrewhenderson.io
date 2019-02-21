@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, ButtonToolbar } from "react-bootstrap";
 import { Spring, animated } from "react-spring/renderprops";
-import { GradientPinkRed, GradientPurpleTeal } from "@vx/gradient";
+import { GradientPinkRed } from "@vx/gradient";
 import * as easings from "d3-ease";
 
 console.log(easings);
@@ -18,13 +18,7 @@ export default class App extends React.Component {
       <div>
         <svg className="spring-heptagram" width="200" height="200">
           <GradientPinkRed id="gradient-stroke" />
-          <GradientPurpleTeal id="gradient-fill" />
-          <g
-            // fill="url(#gradient-fill)"
-            fill="none"
-            stroke="url(#gradient-stroke)"
-            strokeWidth="3"
-          >
+          <g fill="none" stroke="url(#gradient-stroke)" strokeWidth="3">
             <Spring
               native
               reset
@@ -41,7 +35,6 @@ export default class App extends React.Component {
                   ref={this.path}
                   strokeDasharray={offset}
                   strokeDashoffset={props.dash}
-                  // d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
                   d="M 0 -100 L 97 22 L -43 90 L -78 -62 L 78-62 L 43 90 L -97 22 
                      L 0 -100 L -78 -62 L -97 22 L -43 90 L 43 90 L 97 22 L 78,-62 
                      L 0 -100 L -43 90 L 78,-62 L -97 22 L 97 22 L -78 -62 43 90 Z"

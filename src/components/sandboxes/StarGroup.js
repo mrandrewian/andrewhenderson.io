@@ -70,14 +70,14 @@ class Stars extends Component {
                 Using css animations and overlapping psuedo element styling you
                 can easily achieve this "usefull" little star.
               </Card.Text>
-              <Button
+              {/* <Button
                 onClick={() => this.setState({ open: !open })}
                 aria-controls="show-code1"
                 aria-expanded={open}
                 className="btn btn-primary"
               >
                 Show Code
-              </Button>
+              </Button> */}
             </Card.Body>
           </Card>
           <Collapse in={this.state.open}>

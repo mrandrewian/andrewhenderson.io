@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import {
   ButtonToolbar,
-  Button,
-  InputGroup,
-  FormControl,
   DropdownButton,
-  Dropdown
+  Dropdown,
+  ToggleButton,
+  ToggleButtonGroup
 } from "react-bootstrap";
 
 class Polygon extends Component {
@@ -17,24 +16,24 @@ class Polygon extends Component {
       vertexes: 5,
       radius: 100,
       polygram: true,
+      spin: 0,
       layers: 1
     };
   }
 
-  poly = (x, y, n, r, v) => {
+  poly = (x, y, n, r, s = 0, v) => {
     let pathArray = ["M"],
-      order = v ? 2 : 1,
-      spin = 0;
+      order = v ? 2 : 1;
 
     for (let i = 0; i < n; i++) {
       if (n % 2 === 0 && v && i === n / 2) {
         pathArray.push("Z M");
-        spin = 0.5;
+        s = 0.5;
       }
       let xNode =
-          x + r * Math.cos((2 * Math.PI * ((i - spin) * order)) / n).toFixed(2),
+          x + r * Math.cos((2 * Math.PI * ((i - s) * order)) / n).toFixed(2),
         yNode =
-          y + r * Math.sin((2 * Math.PI * ((i - spin) * order)) / n).toFixed(2);
+          y + r * Math.sin((2 * Math.PI * ((i - s) * order)) / n).toFixed(2);
       pathArray.push(xNode + " " + yNode);
     }
     pathArray.push("Z");
@@ -43,62 +42,91 @@ class Polygon extends Component {
     this.setState({ path: pathArray });
   };
 
-  setVertexes = event => {
-    this.setState({ vertexes: event.target.value });
+  setVertexes = eventKey => {
+    this.setState({ vertexes: eventKey }, () => this.updatePoly());
   };
 
   setRadius = eventKey => {
-    this.setState({ radius: eventKey });
+    this.setState({ radius: eventKey }, () => this.updatePoly());
   };
 
-  setPolygram = eventKey => {
-    if (eventKey === "true") {
-      this.setState({ polygram: true });
-    } else {
-      this.setState({ polygram: false });
-    }
+  setSpin = eventKey => {
+    this.setState({ spin: eventKey }, () => this.updatePoly());
+  };
+
+  setPolygram = value => {
+    value === "polygon"
+      ? this.setState({ polygram: false }, () => this.updatePoly())
+      : this.setState({ polygram: true }, () => this.updatePoly());
+  };
+
+  updatePoly = () => {
+    this.poly(
+      0,
+      0,
+      this.state.vertexes,
+      this.state.radius,
+      this.state.spin,
+      this.state.polygram
+    );
   };
 
   render() {
     return (
-      <div>
+      <div className="px-2 m-1">
         <svg className="polygon" height="200" width="200">
           <path d={this.state.path} />
         </svg>
-        <InputGroup>
-          <InputGroup.Prepend>
-            <InputGroup.Text>Number of Vertexes</InputGroup.Text>
-          </InputGroup.Prepend>
-          <FormControl
-            as="input"
-            aria-label="Number of Vertexes"
-            onChange={this.setVertexes}
-          />
-        </InputGroup>
         <ButtonToolbar className="justify-content-center">
-          <DropdownButton className="px-2 m-1" id="poly-type" title="Poly Type">
-            <Dropdown.Item onSelect={this.setPolygram} eventKey={false}>
-              Polygon
+          <DropdownButton
+            className="px-2 m-1"
+            id="varient-button"
+            title="Vertexes"
+          >
+            <Dropdown.Item onSelect={this.setVertexes} eventKey="5">
+              5
             </Dropdown.Item>
-            <Dropdown.Item onSelect={this.setPolygram} eventKey={true}>
-              Polygram
+            <Dropdown.Item onSelect={this.setVertexes} eventKey="6">
+              6
+            </Dropdown.Item>
+            <Dropdown.Item onSelect={this.setVertexes} eventKey="7">
+              7
+            </Dropdown.Item>
+            <Dropdown.Item onSelect={this.setVertexes} eventKey="8">
+              8
+            </Dropdown.Item>
+            <Dropdown.Item onSelect={this.setVertexes} eventKey="9">
+              9
+            </Dropdown.Item>
+            <Dropdown.Item onSelect={this.setVertexes} eventKey="10">
+              10
+            </Dropdown.Item>
+            <Dropdown.Item onSelect={this.setVertexes} eventKey="11">
+              11
+            </Dropdown.Item>
+            <Dropdown.Item onSelect={this.setVertexes} eventKey="12">
+              12
+            </Dropdown.Item>
+            <Dropdown.Item onSelect={this.setVertexes} eventKey="13">
+              13
+            </Dropdown.Item>
+            <Dropdown.Item onSelect={this.setVertexes} eventKey="14">
+              14
+            </Dropdown.Item>
+            <Dropdown.Item onSelect={this.setVertexes} eventKey="15">
+              15
             </Dropdown.Item>
           </DropdownButton>
-          <Button
+          <ToggleButtonGroup
+            name="polyGroup"
+            type="radio"
+            value={this.state.value}
+            onChange={this.setPolygram}
             className="px-2 m-1"
-            onClick={() => {
-              this.poly(
-                0,
-                0,
-                this.state.vertexes,
-                this.state.radius,
-                this.state.polygram
-              );
-            }}
-            className="btn btn-primary"
           >
-            Update Path
-          </Button>
+            <ToggleButton value="polygon">Polygon</ToggleButton>
+            <ToggleButton value="polygram">Polygram</ToggleButton>
+          </ToggleButtonGroup>
         </ButtonToolbar>
       </div>
     );

@@ -166,14 +166,14 @@ class Polylines extends Component {
                 This is what happens when you start messing with stuff just for
                 the heck of it.
               </Card.Text>
-              <Button
+              {/* <Button
                 onClick={() => this.setState({ open: !open })}
                 aria-controls="show-code2"
                 aria-expanded={open}
                 className="btn btn-primary"
               >
                 Show Code
-              </Button>
+              </Button> */}
             </Card.Body>
           </Card>
           <Collapse in={this.state.open}>
