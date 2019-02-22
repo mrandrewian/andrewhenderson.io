@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import "./PenroseTriangle.scss";
+
 class PenroseTriangle extends Component {
   render() {
     return (

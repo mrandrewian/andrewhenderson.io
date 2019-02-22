@@ -4,8 +4,6 @@ import { Spring, animated } from "react-spring/renderprops";
 import { GradientPinkRed } from "@vx/gradient";
 import * as easings from "d3-ease";
 
-console.log(easings);
-
 export default class App extends React.Component {
   state = { offset: 0 };
   path = React.createRef();

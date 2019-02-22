@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { ButtonToolbar, Button } from "react-bootstrap";
 
+import "./Heptagram.scss";
+
 class Heptagram extends Component {
   constructor(props) {
     super(props);

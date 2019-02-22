@@ -1,14 +1,10 @@
 import React, { Component } from "react";
-import { Row, Col, Card, Button, Collapse } from "react-bootstrap";
+import { Row, Col, Card, Collapse } from "react-bootstrap";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/styles/prism";
-import Heptagram from "./Heptagram";
-import SpringHeptagram from "./SpringHeptagram";
-// import PenroseTriangle from "./PenroseTriangle";
-import Polygon from "./Polygon";
-import "../../styles/Heptagram.scss";
-import "../../styles/PenroseTriangle.scss";
-import "../../styles/Polygon.scss";
+import Heptagram from "../molecules/Heptagram";
+import SpringHeptagram from "../molecules/SpringHeptagram";
+import Polygon from "../molecules/Polygon";
 
 class Polygons extends Component {
   constructor(props) {
@@ -20,7 +16,7 @@ class Polygons extends Component {
   }
 
   render() {
-    const { open } = this.state;
+    // const { open } = this.state;
     const codeString = `
     .animated-heptogram {
       polyline {

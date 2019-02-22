@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
-import StarGroup from "./sandboxes/StarGroup";
-import PolylineGroup from "./sandboxes/PolylineGroup";
-import TroublesomeShapeGroup from "./sandboxes/TroublesomeShapeGroup";
+import StarGroup from "./StarGroup";
+import PolylineGroup from "./PolylineGroup";
+import TroublesomeShapeGroup from "./TroublesomeShapeGroup";
 
 class SandBoxGroup extends Component {
   render() {

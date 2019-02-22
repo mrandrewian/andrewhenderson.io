@@ -7,6 +7,8 @@ import {
   ToggleButtonGroup
 } from "react-bootstrap";
 
+import "./Polygon.scss";
+
 class Polygon extends Component {
   constructor(props) {
     super(props);

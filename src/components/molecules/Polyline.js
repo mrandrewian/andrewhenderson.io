@@ -6,6 +6,8 @@ import {
   Button
 } from "react-bootstrap";
 
+import "./Polyline.scss";
+
 class Polylines extends Component {
   constructor(props) {
     super(props);

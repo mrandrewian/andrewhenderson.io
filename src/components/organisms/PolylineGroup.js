@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { Row, Col, Card, Button, Collapse } from "react-bootstrap";
+import { Row, Col, Card, Collapse } from "react-bootstrap";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/styles/prism";
-import Polyline from "./Polyline";
-import "../../styles/Polyline.scss";
+import Polyline from "../molecules/Polyline";
 
 class Polylines extends Component {
   constructor(props) {

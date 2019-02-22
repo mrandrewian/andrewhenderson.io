@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Col, Card, Button } from "react-bootstrap";
-import "../styles/ZoomButtons.scss";
+
+import "./ZoomButton.scss";
 
 class ZoomButton extends Component {
   render() {

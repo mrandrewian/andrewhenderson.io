@@ -4,10 +4,10 @@ import button1 from "./images/hero1.jpg";
 import button2 from "./images/vt_fall.jpg";
 import button3 from "./images/button1.jpg";
 import button2Overlay from "./images/vt_outline.png";
-import "./styles/App.scss";
+import "./App.scss";
 import { Container, Row, Figure } from "react-bootstrap";
-import ZoomButtonGroup from "./components/ZoomButtonGroup";
-import SandBoxGroup from "./components/SandBoxGroup";
+import ZoomButtonGroup from "./components/organisms/ZoomButtonGroup";
+import SandBoxGroup from "./components/organisms/SandBoxGroup";
 
 class App extends Component {
   render() {

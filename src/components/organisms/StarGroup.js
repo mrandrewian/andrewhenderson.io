@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Col, Card, Button, Collapse } from "react-bootstrap";
+import { Col, Card, Collapse } from "react-bootstrap";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/styles/prism";
-import "../../styles/Star.scss";
+import Star from "../molecules/Star";
 
 class Stars extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class Stars extends Component {
   }
 
   render() {
-    const { open } = this.state;
+    // const { open } = this.state;
     const codeString = `
     .star-12 {
       position: relative;
@@ -63,7 +63,7 @@ class Stars extends Component {
       <Col sm={12} className="my-3">
         <div className="sand-box rounded">
           <Card className="text-dark">
-            <div className="star-12 mx-auto mt-5 mb-4" />
+            <Star />
             <Card.Body>
               <Card.Title>Spinning 12pt Star</Card.Title>
               <Card.Text>
