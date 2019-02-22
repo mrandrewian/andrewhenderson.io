@@ -7,27 +7,27 @@
     fill: none;
     stroke-width: 2;
 
-    &.l1 {
+    &.l0 {
       stroke: var(--red);
     }
 
-    &.l2 {
+    &.l1 {
       stroke: var(--yellow);
     }
 
-    &.l3 {
+    &.l2 {
       stroke: var(--cyan);
     }
 
-    &.l4 {
+    &.l3 {
       stroke: var(--blue);
     }
 
-    &.l5 {
+    &.l4 {
       stroke: var(--red);
     }
 
-    &.l6 {
+    &.l5 {
       stroke: var(--yellow);
     }
   }
@@ -38,34 +38,4 @@
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-name: spin;
-
-  &.l1 {
-    stroke: var(--red);
-    animation-duration: random(25) + s;
-  }
-
-  &.l2 {
-    stroke: var(--yellow);
-    animation-duration: random(25) + s;
-  }
-
-  &.l3 {
-    stroke: var(--cyan);
-    animation-duration: random(25) + s;
-  }
-
-  &.l4 {
-    stroke: var(--blue);
-    animation-duration: random(25) + s;
-  }
-
-  &.l5 {
-    stroke: var(--red);
-    animation-duration: random(25) + s;
-  }
-
-  &.l6 {
-    stroke: var(--yellow);
-    animation-duration: random(25) + s;
-  }
 }

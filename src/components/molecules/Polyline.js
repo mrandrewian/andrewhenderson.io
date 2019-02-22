@@ -3,8 +3,11 @@ import {
   ButtonToolbar,
   Dropdown,
   DropdownButton,
-  Button
+  ToggleButton,
+  ToggleButtonGroup
 } from "react-bootstrap";
+import Svg from "../atoms/Svg";
+import Polyline from "../atoms/Polyline";
 
 import "./Polyline.scss";
 
@@ -16,7 +19,50 @@ class Polylines extends Component {
       layers: this.props.count,
       varient: this.props.varient,
       strokeWidth: this.props.strokeWidth,
-      overlay: this.props.overlay
+      opacity: this.props.opacity,
+      overlay: this.props.overlay.props,
+      pathsArray: [
+        "0,95 95,95 95,0",
+        "0,85 85,85 85,0",
+        "0,75 75,75 75,0",
+        "0,65 65,65 65,0",
+        "0,55 55,55 55,0",
+        "0,45 45,45 45,0",
+        "0,35 35,35 35,0",
+        "0,25 25,25 25,0",
+        "0,15 15,15 15,0",
+        "0,5 5,5 5,0",
+        "105,0 105,95 200,95",
+        "115,0 115,85 200,85",
+        "125,0 125,75 200,75",
+        "135,0 135,65 200,65",
+        "145,0 145,55 200,55",
+        "155,0 155,45 200,45",
+        "165,0 165,35 200,35",
+        "175,0 175,25 200,25",
+        "185,0 185,15 200,15",
+        "195,0 195,5 200,5",
+        "0,105 95,105 95,200",
+        "0,115 85,115 85,200",
+        "0,125 75,125 75,200",
+        "0,135 65,135 65,200",
+        "0,145 55,145 55,200",
+        "0,155 45,155 45,200",
+        "0,165 35,165 35,200",
+        "0,175 25,175 25,200",
+        "0,185 15,185 15,200",
+        "0,195 5,195 5,200",
+        "105,200 105,105 200,105",
+        "115,200 115,115 200,115",
+        "125,200 125,125 200,125",
+        "135,200 135,135 200,135",
+        "145,200 145,145 200,145",
+        "155,200 155,155 200,155",
+        "165,200 165,165 200,165",
+        "175,200 175,175 200,175",
+        "185,200 185,185 200,185",
+        "195,200 195,,195 200,195"
+      ]
     };
   }
 
@@ -32,199 +78,55 @@ class Polylines extends Component {
     this.setState({ strokeWidth: eventKey });
   };
 
-  setOverlay = () => {
-    let overlay = this.state.overlay ? false : true;
-    this.setState({ overlay });
+  setOpacity = eventKey => {
+    this.setState({ opacity: eventKey });
   };
 
-  loopPolylines = layers => {
-    let polylines = [];
+  setOverlay = value => {
+    this.setState({ overlay: value });
+  };
+
+  loopSvgs = layers => {
+    let svgs = [];
     for (let i = 0; i < layers; i++) {
-      polylines.push(
+      svgs.push(
         <div className={`polyline-layer-container plc${i}`}>
-          <svg
-            className={`polyline-layer layer${i} stroke-width${
-              this.state.strokeWidth
-            }`}
+          <Svg
+            className={`
+              layer${i}
+              polyline-layer
+              opacity${this.state.opacity}  
+              stroke-width${this.state.strokeWidth}
+            `}
             height="200"
             width="200"
           >
-            {/* Top Left */}
-            <polyline
-              className={`tl ${this.state.varient}${i}`}
-              points="0,95 95,95 95,0"
-            />
-            <polyline
-              className={`tl ${this.state.varient}${i}`}
-              points="0,85 85,85 85,0"
-            />
-            <polyline
-              className={`tl ${this.state.varient}${i}`}
-              points="0,75 75,75 75,0"
-            />
-            <polyline
-              className={`tl ${this.state.varient}${i}`}
-              points="0,65 65,65 65,0"
-            />
-            <polyline
-              className={`tl ${this.state.varient}${i}`}
-              points="0,55 55,55 55,0"
-            />
-            <polyline
-              className={`tl ${this.state.varient}${i}`}
-              points="0,45 45,45 45,0"
-            />
-            <polyline
-              className={`tl ${this.state.varient}${i}`}
-              points="0,35 35,35 35,0"
-            />
-            <polyline
-              className={`tl ${this.state.varient}${i}`}
-              points="0,25 25,25 25,0"
-            />
-            <polyline
-              className={`tl ${this.state.varient}${i}`}
-              points="0,15 15,15 15,0"
-            />
-            <polyline
-              className={`tl ${this.state.varient}${i}`}
-              points="0,5 5,5 5,0"
-            />
-            {/* Top Right */}
-            <polyline
-              className={`tr ${this.state.varient}${i}`}
-              points="105,0 105,95 200,95"
-            />
-            <polyline
-              className={`tr ${this.state.varient}${i}`}
-              points="115,0 115,85 200,85"
-            />
-            <polyline
-              className={`tr ${this.state.varient}${i}`}
-              points="125,0 125,75 200,75"
-            />
-            <polyline
-              className={`tr ${this.state.varient}${i}`}
-              points="135,0 135,65 200,65"
-            />
-            <polyline
-              className={`tr ${this.state.varient}${i}`}
-              points="145,0 145,55 200,55"
-            />
-            <polyline
-              className={`tr ${this.state.varient}${i}`}
-              points="155,0 155,45 200,45"
-            />
-            <polyline
-              className={`tr ${this.state.varient}${i}`}
-              points="165,0 165,35 200,35"
-            />
-            <polyline
-              className={`tr ${this.state.varient}${i}`}
-              points="175,0 175,25 200,25"
-            />
-            <polyline
-              className={`tr ${this.state.varient}${i}`}
-              points="185,0 185,15 200,15"
-            />
-            <polyline
-              className={`tr ${this.state.varient}${i}`}
-              points="195,0 195,5 200,5"
-            />
-            {/* Bottom Left */}
-            <polyline
-              className={`bl ${this.state.varient}${i}`}
-              points="0,105 95,105 95,200"
-            />
-            <polyline
-              className={`bl ${this.state.varient}${i}`}
-              points="0,115 85,115 85,200"
-            />
-            <polyline
-              className={`bl ${this.state.varient}${i}`}
-              points="0,125 75,125 75,200"
-            />
-            <polyline
-              className={`bl ${this.state.varient}${i}`}
-              points="0,135 65,135 65,200"
-            />
-            <polyline
-              className={`bl ${this.state.varient}${i}`}
-              points="0,145 55,145 55,200"
-            />
-            <polyline
-              className={`bl ${this.state.varient}${i}`}
-              points="0,155 45,155 45,200"
-            />
-            <polyline
-              className={`bl ${this.state.varient}${i}`}
-              points="0,165 35,165 35,200"
-            />
-            <polyline
-              className={`bl ${this.state.varient}${i}`}
-              points="0,175 25,175 25,200"
-            />
-            <polyline
-              className={`bl ${this.state.varient}${i}`}
-              points="0,185 15,185 15,200"
-            />
-            <polyline
-              className={`bl ${this.state.varient}${i}`}
-              points="0,195 5,195 5,200"
-            />
-            {/* Bottom Right */}
-            <polyline
-              className={`br ${this.state.varient}${i}`}
-              points="105,200 105,105 200,105"
-            />
-            <polyline
-              className={`br ${this.state.varient}${i}`}
-              points="115,200 115,115 200,115"
-            />
-            <polyline
-              className={`br ${this.state.varient}${i}`}
-              points="125,200 125,125 200,125"
-            />
-            <polyline
-              className={`br ${this.state.varient}${i}`}
-              points="135,200 135,135 200,135"
-            />
-            <polyline
-              className={`br ${this.state.varient}${i}`}
-              points="145,200 145,145 200,145"
-            />
-            <polyline
-              className={`br ${this.state.varient}${i}`}
-              points="155,200 155,155 200,155"
-            />
-            <polyline
-              className={`br ${this.state.varient}${i}`}
-              points="165,200 165,165 200,165"
-            />
-            <polyline
-              className={`br ${this.state.varient}${i}`}
-              points="175,200 175,175 200,175"
-            />
-            <polyline
-              className={`br ${this.state.varient}${i}`}
-              points="185,200 185,185 200,185"
-            />
-            <polyline
-              className={`br ${this.state.varient}${i}`}
-              points="195,200 195,195 200,195"
-            />
-          </svg>
+            {this.loopPolylines(i)}
+          </Svg>
         </div>
       );
     }
-    return polylines;
+    return svgs;
+  };
+
+  loopPolylines = count => {
+    let paths = [];
+    for (let i = 0; i < this.state.pathsArray.length; i++) {
+      paths.push(
+        <Polyline
+          className={`${this.state.varient}${count}`}
+          points={this.state.pathsArray[i]}
+        />
+      );
+    }
+    return paths;
   };
 
   render() {
     return (
       <div className="polyline">
-        {this.state.overlay ? <div className="circle-overlay" /> : ""}
-        {this.loopPolylines(this.state.layers)}
+        <div className={this.state.overlay} />
+        {this.loopSvgs(this.state.layers, this.state.pathsArray)}
         <ButtonToolbar className="justify-content-center">
           <DropdownButton
             className="px-2 m-1"
@@ -277,9 +179,36 @@ class Polylines extends Component {
               8
             </Dropdown.Item>
           </DropdownButton>
-          <Button className="px-2 m-1" onClick={this.setOverlay}>
-            Toggle Overlay
-          </Button>
+          <DropdownButton
+            className="px-2 m-1"
+            id="varient-button"
+            title="Opacity"
+          >
+            <Dropdown.Item onSelect={this.setOpacity} eventKey="4">
+              .4
+            </Dropdown.Item>
+            <Dropdown.Item onSelect={this.setOpacity} eventKey="6">
+              .6
+            </Dropdown.Item>
+            <Dropdown.Item onSelect={this.setOpacity} eventKey="8">
+              .8
+            </Dropdown.Item>
+            <Dropdown.Item onSelect={this.setOpacity} eventKey="1">
+              1
+            </Dropdown.Item>
+          </DropdownButton>
+          <ToggleButtonGroup
+            name="overlays"
+            type="radio"
+            defaultValue={this.state.overlay}
+            value={this.state.value}
+            onChange={this.setOverlay}
+            className="px-2 m-1"
+          >
+            <ToggleButton value="overlay-none">No Overlay</ToggleButton>
+            <ToggleButton value="overlay-circle">Circle</ToggleButton>
+            <ToggleButton value="overlay-square">Square</ToggleButton>
+          </ToggleButtonGroup>
         </ButtonToolbar>
       </div>
     );

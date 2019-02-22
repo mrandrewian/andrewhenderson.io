@@ -6,6 +6,10 @@ import {
   ToggleButton,
   ToggleButtonGroup
 } from "react-bootstrap";
+import Svg from "../atoms/Svg";
+import PolyPath from "../atoms/PolyPath";
+
+import { poly } from "../../utils/poly";
 
 import "./Polygon.scss";
 
@@ -14,7 +18,7 @@ class Polygon extends Component {
     super(props);
 
     this.state = {
-      path: "M 100 0 -81 59 31 -95 31 95 -81 -59 Z",
+      d: "M 100 0 -81 59 31 -95 31 95 -81 -59 Z",
       vertexes: 5,
       radius: 100,
       polygram: true,
@@ -23,25 +27,16 @@ class Polygon extends Component {
     };
   }
 
-  poly = (x, y, n, r, s = 0, v) => {
-    let pathArray = ["M"],
-      order = v ? 2 : 1;
-
-    for (let i = 0; i < n; i++) {
-      if (n % 2 === 0 && v && i === n / 2) {
-        pathArray.push("Z M");
-        s = 0.5;
-      }
-      let xNode =
-          x + r * Math.cos((2 * Math.PI * ((i - s) * order)) / n).toFixed(2),
-        yNode =
-          y + r * Math.sin((2 * Math.PI * ((i - s) * order)) / n).toFixed(2);
-      pathArray.push(xNode + " " + yNode);
+  dropDownLoop = (s, f) => {
+    let dropdownitems = [];
+    for (let i = s; i <= f; i++) {
+      dropdownitems.push(
+        <Dropdown.Item onSelect={this.setVertexes} eventKey={i}>
+          {i}
+        </Dropdown.Item>
+      );
     }
-    pathArray.push("Z");
-    pathArray = pathArray.join(" ");
-
-    this.setState({ path: pathArray });
+    return dropdownitems;
   };
 
   setVertexes = eventKey => {
@@ -63,61 +58,31 @@ class Polygon extends Component {
   };
 
   updatePoly = () => {
-    this.poly(
-      0,
-      0,
-      this.state.vertexes,
-      this.state.radius,
-      this.state.spin,
-      this.state.polygram
-    );
+    this.setState({
+      d: poly(
+        0,
+        0,
+        this.state.vertexes,
+        this.state.radius,
+        this.state.spin,
+        this.state.polygram
+      )
+    });
   };
 
   render() {
     return (
       <div className="px-2 m-1">
-        <svg className="polygon" height="200" width="200">
-          <path d={this.state.path} />
-        </svg>
+        <Svg className="polygon" height="200" width="200">
+          <PolyPath d={this.state.d} />
+        </Svg>
         <ButtonToolbar className="justify-content-center">
           <DropdownButton
             className="px-2 m-1"
             id="varient-button"
             title="Vertexes"
           >
-            <Dropdown.Item onSelect={this.setVertexes} eventKey="5">
-              5
-            </Dropdown.Item>
-            <Dropdown.Item onSelect={this.setVertexes} eventKey="6">
-              6
-            </Dropdown.Item>
-            <Dropdown.Item onSelect={this.setVertexes} eventKey="7">
-              7
-            </Dropdown.Item>
-            <Dropdown.Item onSelect={this.setVertexes} eventKey="8">
-              8
-            </Dropdown.Item>
-            <Dropdown.Item onSelect={this.setVertexes} eventKey="9">
-              9
-            </Dropdown.Item>
-            <Dropdown.Item onSelect={this.setVertexes} eventKey="10">
-              10
-            </Dropdown.Item>
-            <Dropdown.Item onSelect={this.setVertexes} eventKey="11">
-              11
-            </Dropdown.Item>
-            <Dropdown.Item onSelect={this.setVertexes} eventKey="12">
-              12
-            </Dropdown.Item>
-            <Dropdown.Item onSelect={this.setVertexes} eventKey="13">
-              13
-            </Dropdown.Item>
-            <Dropdown.Item onSelect={this.setVertexes} eventKey="14">
-              14
-            </Dropdown.Item>
-            <Dropdown.Item onSelect={this.setVertexes} eventKey="15">
-              15
-            </Dropdown.Item>
+            {this.dropDownLoop(3, 12)}
           </DropdownButton>
           <ToggleButtonGroup
             name="polyGroup"

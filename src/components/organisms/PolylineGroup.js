@@ -30,7 +30,7 @@ class Polylines extends Component {
   };
 
   render() {
-    const { open } = this.state;
+    // const { open } = this.state;
     const codeString = `
     .polyline {
       polyline {
@@ -138,7 +138,8 @@ class Polylines extends Component {
                     varient="a"
                     count="2"
                     strokeWidth="4"
-                    overlay={false}
+                    opacity="1"
+                    overlay="none"
                   />
                 </Col>
                 <Col lg={4}>
@@ -146,7 +147,8 @@ class Polylines extends Component {
                     varient="b"
                     count="3"
                     strokeWidth="4"
-                    overlay={true}
+                    opacity="1"
+                    overlay="none"
                   />
                 </Col>
                 <Col lg={4}>
@@ -154,7 +156,8 @@ class Polylines extends Component {
                     varient="c"
                     count="4"
                     strokeWidth="4"
-                    overlay={false}
+                    opacity="1"
+                    overlay="none"
                   />
                 </Col>
               </Row>
